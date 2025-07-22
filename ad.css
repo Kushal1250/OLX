@@ -1,0 +1,148 @@
+@font-face {
+  font-family: myFont;
+  src: url(../fonts/font.woff2);
+}
+
+/* Base Styling */
+body {
+  font-family: myFont, sans-serif;
+}
+
+/* ========== Header ========== */
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#title {
+  align-self: center;
+  padding-left: 10px;
+}
+
+#Account {
+  height: 100px;
+  width: 100px;
+}
+
+.account,
+.SubmitAD {
+  height: 50px;
+  width: 120px;
+  align-self: center;
+  background: transparent;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.account {
+  color: #2f73d8;
+}
+
+.account:hover {
+  background-color: #2f73d8;
+  color: white;
+}
+
+.SubmitAD {
+  color: #ff8300;
+}
+
+.SubmitAD:hover {
+  background-color: #ff8300;
+  color: white;
+}
+
+#SignInTitle {
+  text-align: center;
+}
+
+/* ========== Divider ========== */
+hr {
+  border: 1px solid transparent;
+  margin-bottom: 25px;
+}
+
+/* ========== Welcome Message ========== */
+#welcomeName {
+  display: none;
+}
+
+/* ========== Ad Form Section ========== */
+.AdFormMain {
+  background-color: #e69035;
+  opacity: 0.9;
+  padding: 50px;
+  border-radius: 10px;
+}
+
+#title2 {
+  margin-left: 70px;
+}
+
+/* ========== Textarea ========== */
+#AdDescriptionTextArea {
+  margin-left: 20px;
+  padding-left: 10px;
+  width: 650px;
+  height: 200px;
+  height: 40px;
+  box-shadow: 0 2px 0 #e6e6e6;
+}
+
+/* ========== Error Message ========== */
+#error {
+  display: none;
+  color: red;
+  font-size: 22px;
+}
+
+/* ========== Loader ========== */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(252, 252, 252);
+  opacity: 0.5;
+  z-index: 1000001;
+}
+
+.loader img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -100px;
+  width: 200px;
+}
+.account,
+.SubmitAD {
+  height: 50px;
+  width: 120px;
+  background: transparent;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  margin-right: 10px; /* <-- Add gap between buttons */
+}
+
+.account {
+  color: #2f73d8;
+  font-weight: bold;
+}
+
+.SubmitAD {
+  color: #ff8300;
+  font-weight: bold;
+}
+.SubmitAD {
+  height: 50px;
+  width: 150px; /* ⬅️ Increased from 120px to 150px */
+  background: transparent;
+  border: 2px solid lightgray;
+  color: #ff8300;
+  border-radius: 5px;
+  font-weight: bold;
+}

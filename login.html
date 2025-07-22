@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OLXA</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="login.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Page Wrapper -->
+    <div class="Fullpage">
+
+        <!-- Header -->
+        <div class="header container d-flex align-items-center justify-content-between flex-wrap py-3">
+            <a href="../index.html">
+                <img src="../Images/logo.png" alt="OLXA Logo" height="100px" width="100px">
+            </a>
+
+            <h3 id="title" class="mx-3 my-2">Online Largest Market Place</h3>
+
+            <div class="d-flex flex-wrap gap-3 my-2">
+                <button class="account" onclick="window.location='../My account/account.html'">Account</button>
+                <button class="SubmitAD" onclick="window.location='../Submit Add/ad.html'">SubmitAd</button>
+            </div>
+        </div>
+
+        <!-- Login Form -->
+        <div class="container jumbotron Main mt-4">
+            <h1 id="SignInTitle" class="text-center">Sign In</h1>
+            <hr>
+
+            <div class="loginForm jumbotron px-4 py-4">
+                <div class="form-group">
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" id="email" placeholder="Enter Email" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" id="password" placeholder="Enter Password" class="form-control">
+                </div>
+
+                <p id="error" class="text-danger">Error</p>
+
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <a href="../Register/register.html">Create An Account</a>
+                    <button onclick="login()" class="btn btn-primary signupbtn">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+
+    <!-- Firebase Configuration -->
+    <script>
+        var config = {
+            apiKey: "AIzaSyDEsL6stJ4-PQ2LV-rzvzWFGHHxmhSqVDs",
+            authDomain: "india-olx-1.firebaseapp.com",
+            databaseURL: "https://india-olx-1.firebaseio.com",
+            projectId: "india-olx-1",
+            storageBucket: "india-olx-1.appspot.com",
+            messagingSenderId: "719427536807"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <!-- Custom JS -->
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OLX</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="message.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+<body onload="gettingRooms()">
+
+    <!-- Header -->
+    <div class="header container d-flex align-items-center justify-content-between flex-wrap py-3">
+        <a href="../index.html">
+            <img src="../Images/logo.png" height="100px" width="100px" alt="Logo">
+        </a>
+
+        <h3 id="title" class="mx-3 my-2">Online Largest Market Place</h3>
+
+        <div class="d-flex flex-wrap gap-3 my-2">
+            <button class="account" onclick="window.location='../My account/account.html'">My Account</button>
+            <button class="SubmitAD" onclick="window.location='../Submit Add/ad.html'">Submit An Ad</button>
+        </div>
+    </div>
+
+    <!-- Chat Section -->
+    <div class="container my-4" id="chats">
+        <h1 align="center" id="Heading">YOUR CHATS</h1>
+        <hr id="hr">
+        <div id="ChatMain"></div>
+    </div>
+
+    <!-- Offline Message -->
+    <div id="offlineMessage" style="display: none;" class="text-center my-4">
+        <h2>View Your Offline Ads</h2>
+        <button class="btn btn-danger mt-2" onclick="window.location.href='../My account/account.html'">
+            View Offline Ads
+        </button>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader" style="display: none;" id="loader">
+        <img src="../loader.gif" alt="Loading">
+        <div></div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal product_view" id="product_view">
+        <div class="modal-dialog">
+            <div class="modal-content" id="ModalMain"></div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+
+    <!-- Firebase Config -->
+    <script>
+        var config = {
+            apiKey: "AIzaSyDEsL6stJ4-PQ2LV-rzvzWFGHHxmhSqVDs",
+            authDomain: "pakistan-olx-1.firebaseapp.com",
+            databaseURL: "https://pakistan-olx-1.firebaseio.com",
+            projectId: "pakistan-olx-1",
+            storageBucket: "pakistan-olx-1.appspot.com",
+            messagingSenderId: "719427536807"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <!-- Custom JS -->
+    <script src="message.js"></script>
+</body>
+</html>

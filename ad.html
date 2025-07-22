@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OLXA - Submit Ad</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="ad.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <div class="Fullpage">
+        <div class="header d-flex justify-content-between align-items-center flex-wrap p-3 bg-white shadow rounded">
+            <a href="../index.html">
+                <img src="../Images/logo.png" alt="OLXA Logo" height="100" width="100">
+            </a>
+            <h3 id="title" class="text-center flex-grow-1 m-0">Online Largest Market Place</h3>
+            <div class="d-flex flex-column flex-md-row gap-2">
+                <button class="account btn btn-outline-primary" onclick="window.location='../My account/account.html'">My Account</button>
+                <button class="SubmitAD btn btn-outline-warning" onclick="window.location='ad.html'">Submit An Ad</button>
+                <button class="SubmitAD btn btn-outline-danger" onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Submit Ad Title -->
+        <h3 id="title2" class="text-center mb-4">Submit An Ad</h3>
+
+        <!-- Ad Form -->
+        <div class="AdFormMain container">
+            <div class="form-group">
+                <label for="adTitle">Ad Title</label>
+                <input type="text" class="form-control" id="adTitle" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Category">Category</label>
+                <select id="Category" class="form-control" required>
+                    <option selected value="">Select Category</option>
+                    <option value="Mobiles">Mobiles</option>
+                    <option value="Cars">Cars</option>
+                    <option value="Bikes">Bikes</option>
+                    <option value="Furniture">Furniture</option>
+                    <option value="Kids">Kids</option>
+                    <option value="Animals">Animals</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="AdDescription">Ad Description</label>
+                <textarea class="form-control" id="AdDescription" placeholder="Include brand, model, age, and accessories." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="UploadImage">Upload Photos</label>
+                <input type="file" class="form-control-file" id="UploadImage" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" id="price" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control" id="Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Number">Number</label>
+                <input type="number" class="form-control" id="Number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City</label>
+                <select class="form-control" id="city">
+                    <option value="India">All India</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Ladakh">Ladakh</option>
+                </select>
+            </div>
+
+            <p id="error" class="text-danger font-weight-bold d-none">Error</p>
+
+            <p class="text-muted small">
+                By clicking 'Submit' you confirm that you have carefully read and agreed to our Terms of Use & Posting Rules.
+            </p>
+
+            <button type="button" class="btn btn-primary mb-2" onclick="submitAd()">Submit Ad</button>
+        </div>
+    </div>
+
+    <!-- Loader -->
+   <div class="loader" style="display: none;" id="loader">
+    <img src="../loader.gif" alt="Loading">
+  </div>
+
+
+    <!-- Bootstrap JS -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+
+   
+<!-- Firebase libraries -->
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+
+<!-- Firebase config -->
+<script>
+  var config = {
+    apiKey: "AIzaSyDEsL6stJ4-PQ2LV-rzvzWFGHHxmhSqVDs",
+    authDomain: "pakistan-olx-1.firebaseapp.com",
+    databaseURL: "https://pakistan-olx-1.firebaseio.com",
+    projectId: "pakistan-olx-1",
+    storageBucket: "pakistan-olx-1.appspot.com",
+    messagingSenderId: "719427536807"
+  };
+  firebase.initializeApp(config);
+  const db = firebase.firestore();
+</script>
+
+<!-- Your main JS -->
+<script src="ad.js"></script>
+
+
+    
+</body>
+</html>

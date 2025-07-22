@@ -1,0 +1,220 @@
+@font-face {
+  font-family: myFont;
+  src: url(../fonts/font.woff2);
+}
+
+body {
+  font-family: myFont, sans-serif;
+}
+
+/* ========== Header Section ========== */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex: 3;
+}
+
+#title {
+  align-self: center;
+  padding-left: 10px;
+}
+
+#Account {
+  height: 100px;
+  width: 100px;
+}
+
+.account {
+  height: 50px;
+  width: 120px;
+  align-self: center;
+  background: transparent;
+  border: 2px solid lightgray;
+  color: #2f73d8;
+  border-radius: 5px;
+}
+
+.SubmitAD {
+  height: 50px;
+  width: 120px;
+  align-self: center;
+  background: transparent;
+  border: 2px solid lightgray;
+  color: #ff8300;
+  border-radius: 5px;
+}
+
+/* ========== Modal Styling ========== */
+.product_view .modal-dialog {
+  max-width: 800px;
+  width: 100%;
+}
+
+.pre-cost {
+  text-decoration: line-through;
+  color: #a5a5a5;
+}
+
+.space-ten {
+  padding: 10px 0;
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity 1s linear;
+  -webkit-transition: opacity 1s linear;
+}
+
+/* ========== Loader Styling ========== */
+.loader {
+  position: fixed;
+  display: block;
+  opacity: 0.5;
+  z-index: 1000001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(252, 252, 252);
+}
+
+.loader img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -100px;
+  width: 200px;
+}
+
+/* ========== Alert Messages ========== */
+.alert-messages {
+  position: fixed;
+  top: 50px;
+  left: 25%;
+  right: 25%;
+  z-index: 7000;
+}
+
+/* ========== Chat Message UI ========== */
+.titleDiv {
+  background-color: #c1c000;
+  border-radius: 5px 20px 5px;
+  text-align: center;
+}
+
+/* Chat Container */
+.Main {
+  overflow-y: scroll;
+  height: 350px;
+  padding: 5px;
+  margin: 10px;
+}
+
+/* Received Message */
+#reciveMessage {
+  background-color: #f1f1f1;
+  border: 2px solid #eeeeee;
+  padding: 10px;
+  border-radius: 0.35em;
+  margin: 10px 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Sent Message */
+#sendMessage {
+  background-color: #f1f1f1;
+  border: 2px solid #ff8300;
+  padding: 10px;
+  border-radius: 0.35em;
+  margin: 10px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ========== Chat Room / Chat List ========== */
+.ChatMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chatRoom {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid lightgrey;
+  margin: 10px 0;
+  padding-bottom: 10px;
+}
+
+.chatRoom:hover {
+  cursor: pointer;
+}
+
+#Pic {
+  border-radius: 100px;
+}
+
+#rightArrow {
+  font-weight: bolder;
+  margin-left: auto;
+}
+
+hr.style1 {
+  border-top: 3px double #8c8b8b;
+}
+
+#chats {
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+
+/* ========== Offline Message ========== */
+#offlineMessage,
+#offlineMessage h2 {
+  text-align: center;
+}
+
+/* Cross Icon (if used) */
+#cross {
+  margin-right: 150px;
+}
+.account, .SubmitAD {
+    height: 50px;
+    width: 120px;
+    align-self: center;
+    background: transparent;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    margin-right: 10px;  /* ✅ This creates the gap */
+}
+
+/* Optional: Add spacing after the last button */
+.SubmitAD:last-child {
+    margin-right: 0;
+}
+.account, .SubmitAD {
+    height: 50px;
+    width: 140px;              /* Make the button a bit wider */
+    padding: 10px 15px;        /* Add space inside the button */
+    font-size: 16px;           /* Ensure text fits well */
+    text-align: center;        /* Center text */
+    display: flex;             /* Center text vertically */
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    margin-right: 15px;        /* Adds spacing between buttons */
+    white-space: nowrap;       /* Prevents text wrapping */
+}
+@media (max-width: 576px) {
+    .account, .SubmitAD {
+        width: 100%;          /* Full width on mobile */
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}

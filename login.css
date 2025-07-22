@@ -1,0 +1,232 @@
+@font-face {
+  font-family: myFont;
+  src: url(../fonts/font.woff2);
+}
+
+body {
+  font-family: myFont;
+  background: linear-gradient(to right, #dae2f8, #d6a4a4);
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ===============================
+   Input Fields
+================================= */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover {
+  border: 1px solid #2f73d8;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* ===============================
+   Buttons
+================================= */
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 5px;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+.cancelbtn,
+.signupbtn {
+  float: left;
+  width: 50%;
+}
+
+@media screen and (max-width: 300px) {
+  .cancelbtn,
+  .signupbtn {
+    width: 100%;
+  }
+}
+
+/* ===============================
+   Containers
+================================= */
+.container {
+  padding: 16px;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ===============================
+   Header
+================================= */
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#title {
+  padding-left: 10px;
+}
+
+#Account {
+  height: 100px;
+  width: 100px;
+}
+
+.account {
+  height: 50px;
+  width: 120px;
+  background: transparent;
+  border: 2px solid lightgray;
+  color: #2f73d8;
+  border-radius: 5px;
+}
+
+.SubmitAD {
+  height: 50px;
+  width: 120px;
+  background: transparent;
+  border: 2px solid lightgray;
+  color: #ff8300;
+  border-radius: 5px;
+}
+
+/* ===============================
+   Login Section
+================================= */
+#SignInTitle {
+  text-align: center;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+#error {
+  display: none;
+  color: red;
+}
+.account {
+  height: 50px;
+  width: 120px;
+  background: transparent;
+  border: 2px solid lightgray;
+  color: #2f73d8;
+  border-radius: 5px;
+  margin-right: 15px; /* <-- Add this line */
+}
+/* Smooth Card Style for Login Form */
+.Main {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px 40px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+#SignInTitle {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.Main hr {
+  border: none;
+  height: 1px;
+  background-color: #ddd;
+  margin: 10px 0 25px;
+}
+
+.loginForm label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.loginForm input {
+  font-size: 16px;
+  padding: 14px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.loginForm input:focus {
+  background-color: #e6e6e6;
+  border: 1px solid #2f73d8;
+}
+
+.loginForm a {
+  margin-top: 10px;
+  display: inline-block;
+  color: #2f73d8;
+  text-decoration: none;
+}
+
+.loginForm a:hover {
+  text-decoration: underline;
+}
+
+.signupbtn {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 12px 0;
+  margin-top: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.signupbtn:hover {
+  background-color: #45a049;
+}
+
+#error {
+  display: none;
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}

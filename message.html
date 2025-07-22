@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>OLX</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="message.css">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+
+<body onload="gettingMessages()">
+  <!-- Header -->
+  <div class="header d-flex align-items-center justify-content-between flex-wrap p-3 bg-white shadow">
+    <a href="../index.html">
+      <img src="../Images/logo.png" alt="OLX Logo" height="75" width="75">
+    </a>
+    <h3 id="title" class="text-center flex-grow-1 m-0">Online Largest Market Place</h3>
+    <div class="d-flex gap-2 mt-2 mt-md-0">
+      <button class="account btn btn-outline-primary" onclick="window.location='../My account/account.html'">My Account</button>
+      <button class="SubmitAD btn btn-outline-warning" onclick="window.location='../Submit Add/ad.html'">Submit An Ad</button>
+      <button class="SubmitAD btn btn-outline-info" onclick="window.location='messageMain.html'">My Messages</button>
+    </div>
+  </div>
+
+  <!-- Message Section -->
+  <div class="MessageBox container my-4">
+    <div id="MessageBox" class="mb-3"></div>
+    <div class="Main" id="Main"></div>
+
+    <!-- Footer Message Input -->
+    <div class="footer mt-4">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Enter Your Message Here" id="messageText">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" onclick="sendMessage()">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loader -->
+  <div class="loader" style="display: none;" id="loader">
+    <img src="../loader.gif" alt="Loading...">
+  </div>
+
+  <!-- Modal -->
+  <div class="modal product_view" id="product_view">
+    <div class="modal-dialog">
+      <div class="modal-content" id="ModalMain"></div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/bootstrap.js"></script>
+
+  <!-- Firebase Scripts (Only required ones) -->
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script>
+    var config = {
+      apiKey: "AIzaSyDEsL6stJ4-PQ2LV-rzvzWFGHHxmhSqVDs",
+      authDomain: "pakistan-olx-1.firebaseapp.com",
+      databaseURL: "https://pakistan-olx-1.firebaseio.com",
+      projectId: "pakistan-olx-1",
+      storageBucket: "pakistan-olx-1.appspot.com",
+      messagingSenderId: "719427536807"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <!-- Message JS -->
+  <script src="message.js"></script>
+</body>
+</html>
